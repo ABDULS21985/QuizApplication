@@ -1,5 +1,6 @@
 const sequelize = require('../config/db');
 
+const User = require('./User')(sequelize);
 const Building = require('./Building')(sequelize);
 const Question = require('./Question')(sequelize);
 const QuestionOption = require('./QuestionOption')(sequelize);
@@ -21,6 +22,7 @@ sequelize.sync({ alter: true });
 
 module.exports = {
     sequelize,
+    User,
     Building,
     Question,
     QuestionOption,
